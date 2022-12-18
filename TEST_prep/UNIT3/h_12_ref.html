@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		<style>
+			h1, h2 {text-align:center}
+		
+		</style>
+	
+	</head>
+	<body>
+		<div></div>
+		
+		<script type = "text/babel">	
+			
+			class MyComponent extends React.Component
+			{
+			
+				constructor()
+				{
+					super()
+					this.myref = React.createRef()
+				}
+				render()
+				{
+					alert("in alert")
+					return <div>
+						
+						<input type ="text" />
+						<input type ="text"  />
+						<input type ="text" />
+						<input type ="text" ref = {this.myref} />
+						<input type ="text"  />
+						<button onClick = {this.getfocus}>
+						click here to get focus</button>
+					
+					</div>
+				}
+				
+				getfocus=()=>
+				{
+					this.myref.current.focus()
+				}
+				
+				
+			}
+			
+			ReactDOM.render(<MyComponent/>, document.querySelector("div"))
+		
+		</script>
+		
+	
+	</body>
+</html>

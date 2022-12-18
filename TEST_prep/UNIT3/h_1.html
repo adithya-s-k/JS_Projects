@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+	<head>
+		<script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+	</head>
+	<body>
+		<div></div>
+		
+		<script type = "text/babel">
+			/*ReactDOM.render("hello all, welcome to reactjs",
+			document.querySelector("div")
+			)
+			
+			*/
+			
+		/*	ReactDOM.render(<h1>welcome to ReactJS</h1>,
+			document.querySelector("div") // error
+			
+			*/
+			/*ReactDOM.render("<h1>welcome to ReactJS</h1>",
+			document.querySelector("div")
+			)*/
+			
+			
+			/*ReactDOM.render(React.createElement("h1",null,
+			"welcome to reactJS"),
+			document.querySelector("div"))
+			
+			*/
+			
+			/*ReactDOM.render(<h1>welcome to Rectjs</h1>,
+			document.querySelector("div"))
+			
+			*/
+			
+			/*ReactDOM.render(<div><p>SUBJECTS</p><ul><li>CSE</li>
+								<li>ECE</li>
+								<li>ME</li>
+							</ul></div>,
+			document.querySelector("div"))
+			*/
+			
+			/*class Hello extends React.Component
+			{
+					render(){
+						return React.createElement("h1",
+						null,
+						"welcome to reactJS")
+					
+					}
+			}
+			*/
+			
+			class Hello extends React.Component
+			{
+					render(){
+						return <h1>Hello {this.props.user}</h1>
+					}
+			}
+			
+			
+			/*class Hello extends React.Component
+			{
+					render(){
+						return <div>
+							<p>SUBJECTS</p><ul><li>CSE</li>
+								<li>ECE</li>
+								<li>ME</li>
+							</ul>
+						</div>
+					}
+			}*/
+			
+			
+			/*ReactDOM.render(<Hello user = "sindhu" age = "50"  address = "blore"/>,document.querySelector("div"))
+			ReactDOM.render(<Hello user = "shyama" age = "50"  address = "blore"/>,document.querySelector("div"))
+			ReactDOM.render(<Hello user = "abc" age = "50"  address = "blore"/>,document.querySelector("div"))
+		*/
+			ReactDOM.render(<div><Hello user = "sindhu" age = "50"  address = "blore"/>
+							<Hello user = "shyama" age = "50"  address = "blore"/>
+							<Hello user = "abc" /></div>
+			
+			,document.querySelector("div"))
+		
+		
+		</script>
+		
+	
+	</body>
+</html>

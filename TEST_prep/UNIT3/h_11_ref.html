@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		<style>
+			h1, h2 {text-align:center}
+		
+		</style>
+	
+	</head>
+	<body>
+		<div></div>
+		
+		<script type = "text/babel">	
+			
+			class MyComponent extends React.Component
+			{
+			
+				constructor()
+				{
+					super()
+					this.myref = React.createRef()
+				}
+				render()
+				{
+					alert("in alert")
+					return <div>
+						<button onClick = {this.dec}>-</button>
+						<input type ="text" ref = {this.myref} defaultValue = "0"/>
+						<button onClick = {this.inc}>+</button>
+					
+					</div>
+				}
+				
+				dec=()=>
+				{
+					//alert(this.myref.current.value)
+					this.myref.current.value--
+				}
+				inc=()=>
+				{
+					this.myref.current.value++
+				}
+			}
+			
+			ReactDOM.render(<MyComponent/>, document.querySelector("div"))
+		
+		</script>
+		
+	
+	</body>
+</html>

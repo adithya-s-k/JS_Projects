@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+	<head>
+		<script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+	</head>
+	<body>
+		<div></div>
+		
+		<script type = "text/babel">	
+			
+		class Image extends React.Component{
+			render()
+			{
+			
+				return (
+					<img src = {this.props.ource}/>
+				)
+			}
+		}	
+		class Link extends React.Component{
+			render()
+			{
+			
+				return (
+					<a href = {this.props.link}>{this.props.linktext}</a>
+				)
+			}
+		}	
+
+		class Caption extends React.Component{
+			render()
+			{
+			
+				return (
+					<p>{this.props.caption}</p>
+				)
+			}
+		}	
+		class SearchImg extends React.Component
+		{
+			render()
+			{
+				return (<div><Image ource  = {this.props.source}/><Link {...this.props}/>
+				<Caption {...this.props}/></div>)
+			}
+		
+		}
+		
+		ReactDOM.render(<div>
+		<SearchImg source = "images/tiger.jpg" link = "tiger.com" 
+			linktext = "click here to know abt tigers"
+			caption = "i like tigers" />
+		<SearchImg source = "images/peacock.jpg" link = "peacock.com" 
+			linktext = "click here to know abt peacock"
+			caption = "i like peacocks" /></div>,
+			document.querySelector("div")
+
+		
+		)
+			
+		
+		</script>
+		
+	
+	</body>
+</html>

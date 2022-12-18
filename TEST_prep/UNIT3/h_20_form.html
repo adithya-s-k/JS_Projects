@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+		<script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		<style>
+			h1, h2 {text-align:center}
+			.H2 {background-color:red}
+		</style>
+	
+	</head>
+	<body>
+		<div></div>
+		
+		<script type = "text/babel">	
+			// uncontrolled component
+			class Uncontrolled extends React.Component
+			{
+				
+				constructor()
+				{
+					super()
+					this.myref  = React.createRef()
+					this.myref1  = React.createRef()
+				}
+				
+				render()
+				{
+					return (<form onSubmit = {this.handlesubmit}>
+						<label>Name:<input type = "text" defaultValue = "sindhu" 
+						ref = {this.myref} name = "name1"
+						/></label>
+						<label>Email:<input type = "text" 
+						ref = {this.myref1} name = "email1"
+						/></label>
+						
+						<input type = "submit" value = "submit form" />
+						
+					
+					
+					</form>)
+				}
+				
+				handlesubmit=()=>
+				{
+					event.preventDefault()
+					alert("u entered "+this.myref.current.value+" "+
+					this.myref1.current.value)
+				}
+				
+				
+			}
+			
+			ReactDOM.render(<Uncontrolled/>, document.querySelector("div"))
+			
+	
+		</script>
+		
+	
+	</body>
+</html>
