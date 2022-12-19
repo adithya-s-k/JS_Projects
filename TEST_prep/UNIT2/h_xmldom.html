@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+	
+		<h1></h1>
+		
+		<script>
+			details = "<bookstore>"+
+				"<book>" +
+					"<title>Everyday Italian</title>" +
+					"<author>Giada De Laurentiis</author>" +
+					"<year>2005</year>" +
+				"</book>"+
+			"</bookstore>"
+			
+			
+			parser = new DOMParser()
+			xmldom = parser.parseFromString(details,"text/xml")
+			//alert(parser)
+			//alert(xmldom)
+			//alert(xmldom.getElementsByTagName("title"))
+			title = xmldom.getElementsByTagName("title")[0]
+			//alert(title)
+		//	alert(title.childNodes)
+		//	alert(title.childNodes[0])
+		//	alert(title.childNodes[0].nodeValue)
+
+				//s = title.childNodes[0].nodeValue += "modified"
+				s = title.childNodes[0].nodeValue + "modified"
+				h1obj = document.querySelector("h1")
+				                 m//h1obj.innerHTML = s
+				
+				
+				xmlser = new XMLSerializer()
+				s = xmlser.serializeToString(xmldom)
+				//alert(s)
+				h1obj.innerHTML = s
+		
+		</script>
+	</body>
+</html>
+

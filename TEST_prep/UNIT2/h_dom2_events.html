@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<script>
+			function init()
+			{
+				h1 = document.getElementsByTagName("h1")
+				/*alert(h1)
+				alert(h1[0])
+				h1[0].onclick = function(){
+					alert("u clicked") 
+				}
+				*/
+				h1[0].addEventListener("click",function(){
+					alert("u clicked") 
+				})
+				
+				//h1[0].removeEventListener()
+				
+			}
+			
+		
+		</script>
+	</head>
+	<body onload = "init()">
+		<!-- inline<h1 onclick = "alert('u clicked')">CSE</h1>-->
+		<h1>CSE</h1>
+	</body>
+</html>

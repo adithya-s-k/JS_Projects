@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+	<head>
+		
+	</head>
+	<body onload = "init()">
+		<button id = "B1">loaddata - text</button>
+		<h1></h1>
+		<script src = "/jquery/jquery-3.6.0.min.js"></script>
+		<script>
+			/*function init()
+			{
+				b1 = document.querySelector("#B1")
+				b1.onclick = loaddata
+				
+			}
+			*/
+			
+			
+			
+			$(document).ready(function(){
+			$("#B1").on("click",function(){
+			
+			/*$.post("/files/sample.php",{name:"sindhu",srn:"2323"},
+					function(res,status,xhr){
+						console.log(status)
+					})
+			
+			
+			})
+			*/
+			
+			})
+			})
+			
+			
+			/*function loaddata()
+			{
+				xhr = new XMLHttpRequest()
+				xhr.open("post",'/files/sample.txt',true)
+				xhr.responseType = "text"
+				xhr.onreadystatechange = showdata
+				xhr.send()
+			}
+			function showdata()
+			{
+				h1 = document.querySelector("h1")
+				if(this.readyState == 4 && this.status == 200)
+				{
+					h1.innerHTML = this.responseText
+				}
+			}
+			
+			*/
+			
+			/*function loaddata()
+			{
+				/*xhr = new XMLHttpRequest()
+				xhr.open("get",'/files/sample.php',true)
+				xhr.send("name=abc&srn=45454")
+				*/
+				
+			/*	xhr = new XMLHttpRequest()
+				xhr.open("post",'/files/sample.php',true)
+				xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+				fd = new FormData()
+				fd.append("name","sindhu")
+				fd.append("srn","2323")
+				
+				
+				//xhr.send("name=abc&srn=45454")
+				//xhr.send(fd)
+				
+				
+				
+				
+				
+				
+			}*/
+			
+			
+			
+			
+		</script>
+	</body>
+</html>
+
+<!--
+
+details = "<bookstore>"+
+				"<book>" +
+					"<title>Everyday Italian</title>" +
+					"<author>Giada De Laurentiis</author>" +
+					"<year>2005</year>" +
+				"</book>"+
+			"</bookstore>"
+			-->

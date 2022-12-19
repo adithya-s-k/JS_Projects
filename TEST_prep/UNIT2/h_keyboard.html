@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+		
+		</style>
+		<script>
+			function init()
+			{
+				name = prompt("enter your name")
+				window.addEventListener("keypress",function(){
+				
+					//alert(event.key)
+					if(event.key == 'u' || event.key == 'U')
+						//document.write(name.toUpperCase())  
+						{
+							document.querySelector("p").innerHTML = name.toUpperCase()
+						}
+					else
+					{
+						if(event.key == 'l' || event.key == "L")
+							alert(name.toLowerCase())
+						else	
+							alert("not valid")
+					}
+				})
+				
+			 }	
+		</script>
+	</head>
+	<body onload = "init()">
+		<h1>CSE</h1>
+		<p></p>
+
+	</body>
+</html>

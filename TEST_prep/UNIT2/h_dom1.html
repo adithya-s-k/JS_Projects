@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<script>
+			function init()
+			{
+				header = document.getElementById("H1")
+				//alert(h1)
+				header.style.backgroundColor = "green"
+				document.body.style.backgroundColor = "pink"
+			}
+			function tolower()
+			{
+				//buttonlist = document.getElementsByTagName("button")
+				//alert(buttonlist+typeof buttonlist)
+				//alert(buttonlist[0])
+				
+				//listitems = document.querySelector("li")
+				listitems = document.querySelectorAll("li")
+				//alert(listitems[1].innerHTML)
+				for(i = 0 ; i <listitems.length;i++)
+				{
+					listitems[i].innerHTML = listitems[i].innerHTML.toLowerCase()
+				}
+				
+				
+			}
+			
+			function toupper()
+			{
+			//	buttonlist = document.getElementsByTagName("button")
+				//alert(buttonlist+typeof buttonlist)
+				//alert(buttonlist[0])
+				
+				//listitems = document.querySelector("li")
+				listitems = document.querySelectorAll("li")
+				//alert(listitems[1].innerHTML)
+				for(i = 0 ; i <listitems.length;i++)
+				{
+					//alert(listitems[i].innerText)
+					//alert(listitems[i].innerHTML)
+				listitems[i].innerText = listitems[i].innerText.toUpperCase()
+					
+					
+				}
+				
+				
+			}
+			function add_item()
+			{
+				liobject = document.createElement("li")
+				txtobject = document.createTextNode("AFLL")
+				liobject.appendChild(txtobject)
+				ulobj = document.querySelector("ul")
+				listitems = document.querySelectorAll("li")
+				ulobj.insertBefore(liobject,listitems[0])
+				
+			}
+			
+		
+		</script>
+	</head>
+	<body onload = "init()">
+		<h1 id = "H1">CSE</h1>
+		<p>Third sem subjects</p>
+		<ul>
+			<li>Web tech</li>
+			<li>data <span>structures</span> </li>
+			<li>SDS</li>
+			<button onclick = "toupper()">to-upper</button>
+			<button onclick = "tolower()">to-lower</button>
+			<button onclick = "add_item()">add-new-item</button>
+		
+		</ul>
+		
+	</body>
+</html>

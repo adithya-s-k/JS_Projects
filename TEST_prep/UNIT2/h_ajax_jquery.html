@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<button id = "B1">loaddata - text</button>
+		<button id = "B2">loaddata - xml</button>
+		<button id = "B3">loaddata - json</button>
+		<button id = "B4">loaddata - video</button>
+		<h1></h1>
+		<script src = "/jquery/jquery-3.6.0.min.js"></script>
+		<script>
+		/*	$().load
+			$.get
+			$.post
+			$.ajax
+			*/
+			$(document).ready(function(){
+			
+				/*$("#B1").on("click",function(){
+				
+					$("h1").load('/files/sample.txt',function(result,status,xhr){
+					
+						console.log(result+" "+status+" "+xhr)
+					})
+				
+				})
+				
+				*/
+				
+				/*$("#B1").on("click",function(){
+				
+					$.get('/files/sample.txt',function(res,status,xhr){
+					
+						console.log(res+" "+status+" "+xhr)
+						
+						$("h1").html(res)
+					})
+				
+				})
+				*/
+				
+				/*$("#B3").on("click",function(){
+				
+					$.get('/files/sample.json',function(res,status,xhr){
+					
+						console.log(res+" "+status+" "+xhr)
+						
+						$("h1").html(res.name+" "+res.id)
+					})
+				
+				})
+				*/
+				
+				
+				/*$("#B2").on("click",function(){
+				
+					$.get('/files/sample.xml',function(res,status,xhr){
+					
+						console.log(res+" "+status+" "+xhr)
+						
+						$("h1").html(res.getElementsByTagName("name")[0].firstChild.nodeValue)
+					})
+				
+				})*/
+				
+				/*$("#B1").on("click",function(){
+				
+					$.ajax({url:'/files/sample.txt',
+							method:'get',
+							success:function(res,status,xhr){
+					
+								console.log(res+" "+status+" "+xhr)
+						
+								$("h1").html(res)
+					},
+					error:function(e){
+						console.log(e )
+					}
+					}
+					)
+				
+				})
+				*/
+				
+				/*$("#B1").on("click",function(){
+					p = fetch('files/sample.txt')
+					.then(function(response){
+						return response.text()
+					})
+					.then(function(text){
+						$("h1").html(text)
+					})
+					.catch(function(e){
+						console.log(e)
+					})
+				*/
+				
+				$("#B3").on("click",function(){
+					p = fetch('files/sample.json')
+					.then(function(response){
+						return response.json()
+					})
+					.then(function(text){
+						$("h1").html(text.name+" "+text.id)
+					})
+					.catch(function(e){
+						console.log(e)
+					})
+				})
+				
+				
+				$("#B2").on("click",function(){
+					p = fetch('files/sample.xml')
+					.then(function(response){
+						return response.text()
+					})
+					.then(function(data){
+					//	console.log(typeof text)
+						d = new DOMParser()
+						xmldom = d.parseFromString(data,"text/xml")
+						$("h1").html(xmldom.getElementsByTagName("name")[0].firstChild.nodeValue)
+					})
+					.catch(function(e){
+						console.log(e)
+					})
+				})
+				
+				
+				
+				$("#B4").on("click",function(){
+					p = fetch('files/audio_video.mp4')
+					.then(function(response){
+						return response.blob()
+					})
+					.then(function(data){
+					// check this
+						//console.log(data)
+						v1 = document.createElement("video")
+						v1.controls = true
+						v1.src = URL.createObjectURL(data)
+						document.body.appendChild(v1)
+					})
+					.catch(function(e){
+						console.log(e)
+					})
+				})
+				
+				
+				
+				
+			
+			
+			})
+			
+		</script>
+	</body>
+</html>
+
+<!--
+
+
+			-->

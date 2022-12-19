@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style></style>
+    <script>
+      function init() {
+        b1 = document.querySelector('button');
+        h1 = document.querySelector('h1');
+        b1.onclick = function () {
+          //alert(navigator.geolocation)
+          navigator.geolocation.getCurrentPosition((position, err) => {
+            console.log(position.coords.longitude);
+          });
+        };
+        function showpos(position) {
+          //alert("success")
+
+          //alert(position)
+          console.log(position);
+          h1.innerHTML =
+            position.coords.latitude + ' ' + position.coords.longitude;
+        }
+        function showerr(e) {
+          //alert("blocked")
+          switch (e.code) {
+            case 1:
+              alert('no permission');
+              break;
+            case 2:
+              alert('not available');
+              break;
+            case 3:
+              alert('timeout');
+              break;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <button>start</button>
+    <h1></h1>
+  </body>
+</html>

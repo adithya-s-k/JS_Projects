@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<button id = "B1">send data</button>
+		<h1></h1>
+		<script src = "/jquery/jquery-3.6.0.min.js"></script>
+		<script>
+					
+			
+			$(document).ready(function(){
+			$("#B1").on("click",function(){
+			 // change method to get and check
+				$.ajax("/files/sample.php",{method:"post",
+				data:{name:"ansdgs",srn:"97887"},
+				success:function(res,status){
+				console.log("from success function"+status)
+				
+				},
+				error:function(res,status){
+					console.log(status)
+				
+				}
+			
+			})
+			
+			})
+			})
+			
+			
+			
+			
+		</script>
+	</body>
+</html>
+
+<!--
+
+details = "<bookstore>"+
+				"<book>" +
+					"<title>Everyday Italian</title>" +
+					"<author>Giada De Laurentiis</author>" +
+					"<year>2005</year>" +
+				"</book>"+
+			"</bookstore>"
+			-->

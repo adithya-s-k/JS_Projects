@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			//div {text-align:center}
+		
+		</style>
+		<script>
+			function init()
+			{
+			//	alert(document.body.firstChild.nextSibling)
+			clrs = ["violet","indigo","blue","green","yellow","orange","red"]
+				document.body.children[0].style.textAlign = "center"
+				spans = document.querySelectorAll("span")
+				for(i = 0 ; i < spans.length;i++)
+				{
+					spans[i].onclick = function(e)
+					{
+						/*//alert(e.target.innerHTML)
+						//e.target.style.backgroundColor = clrs[i]
+						//alert(e.type)
+						switch(e.target.innerHTML)
+						{
+							case "V": e.target.style.backgroundColor = "violet";break;
+							case "I": e.target.style.backgroundColor = "indigo";break;
+							case "B": e.target.style.backgroundColor = "blue";break;
+						}*/
+						
+						document.body.style.backgroundColor = e.target.style.backgroundColor
+						
+					}
+				}
+				
+			}
+			
+		
+		</script>
+	</head>
+	<body onload = "init()">
+		<div>
+				<span style = "background-color:violet">V</span>
+				<span style = "background-color:indigo">I</span>
+				<span style = "background-color:#0000FF">B</span>
+				<span>G</span>
+				<span>Y</span>
+				<span>O</span>
+				<span>R</span>
+			
+			
+			</div>
+
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>	
+	<style>
+		canvas {border:2px solid red}
+	</style>
+		<script>
+			function init()
+			{
+				cobj = document.querySelector("canvas")
+				ctxt = cobj.getContext("2d")
+				ctxt.arc(200,200,40,0,2*Math.PI)
+				ctxt.fillStyle = "red"
+				ctxt.strokeStyle = "blue"
+				ctxt.fill()
+				ctxt.stroke()
+				
+				cobj.addEventListener("click",function()
+				{
+					ctxt.clearRect(0,0,cobj.width, cobj.height)
+					ctxt.beginPath()
+					ctxt.arc(event.clientX,event.clientY,40,0,2*Math.PI)
+				ctxt.fillStyle = "red"
+				ctxt.strokeStyle = "blue"
+				ctxt.fill()
+				ctxt.stroke()
+				}
+				)
+			
+				
+			}
+		
+		</script>
+	</head>
+	<body onload = init()>
+		<canvas height = "400px" width = "600px">
+		
+		
+		</canvas>
+		
+	
+	</body>
+
+
+</html>

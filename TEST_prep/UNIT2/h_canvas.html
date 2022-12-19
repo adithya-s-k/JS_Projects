@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>	
+	<style>
+		canvas {border:2px solid red}
+	</style>
+		<script>
+			function init()
+			{
+				cobj = document.querySelector("canvas")
+				
+				ctxt = cobj.getContext("2d")
+			/*	ctxt.moveTo(100,100)
+				ctxt.lineTo(100,200)
+				ctxt.lineTo(200,200)
+				ctxt.lineTo(200,100)
+				ctxt.strokeStyle = 	"blue"
+				ctxt.lineWidth = "10"
+				//ctxt.lineTo(100,100)
+				ctxt.fillStyle = "pink"
+				ctxt.closePath()
+				ctxt.stroke()
+				ctxt.fill()
+				*/
+				
+				//ctxt.fillStyle = "pink"
+				//ctxt.fillRect(100,100,200,200)
+				
+				
+				/*ctxt.moveTo(100,100)
+				ctxt.lineTo(100,200)
+				ctxt.strokeStyle = "blue"
+				ctxt.stroke()
+				ctxt.beginPath()
+				ctxt.arc(200,200,40,0,2*Math.PI,1)
+				ctxt.strokeStyle = "red"
+				ctxt.stroke()
+				
+				*/
+				
+				//ctxt.fillText("SINDHU R PAI",200,200)
+				// try ctxt.font
+				
+				
+				ctxt.arc(100,100,40,3*Math.PI/2,0,true)
+				ctxt.lineTo(100,100)
+			//	ctxt.lineTo(100,60)
+				ctxt.closePath()
+				ctxt.fillStyle = "red"
+				ctxt.fill()
+			//	ctxt.fill()
+				
+			}
+		
+		</script>
+	</head>
+	<body onload = init()>
+		<canvas height = "400px" width = "600px">
+		
+		
+		</canvas>
+		
+	
+	</body>
+
+
+</html>

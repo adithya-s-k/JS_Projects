@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+		
+		</style>
+		<script>
+			function init()
+			{
+				vobj = document.querySelector("video")
+				pobj = document.querySelector("progress")
+				t = setInterval(fun,5000)
+				/*audioobj = document.querySelector("audio")
+				buttons = document.querySelectorAll("button")
+				for(i = 0; i < buttons.length;i++)
+				{
+					buttons[i].addEventListener("click",
+					function(){
+						if(event.target.id == "b1")
+								audioobj.play()
+						if(event.target.id == "b2")
+								audioobj.pause()
+						//if(event.target.id == "b3")
+							//	audioobj.stop() // error
+						if(event.target.id == "b3")
+						{
+							if(audioobj.paused)
+							{
+								//alert(audioobj.currentTime)
+								//alert(audioobj.duration)
+								audioobj.currentTime = 0
+								audioobj.play()
+							}
+						}
+						
+					})
+				}
+				*/
+			}
+			function fun()
+			{
+				//console.log(p.value)
+				pobj.value = Math.floor(vobj.currentTime/vobj.duration*pobj.max)
+				console.log(pobj.value)
+				if(pobj.value == pobj.max)	
+					clearInterval(t)
+			}
+		</script>
+	</head>
+	<body onload = "init()">
+		<!--<audio src = "one.mp3" controls autoplay muted></audio>
+		<audio src = "twooo.wav" controls autoplay muted></audio>
+		<audio src = "three.ogg" controls autoplay muted></audio>-->
+		
+		
+		<!--<audio controls>
+			<source src = "one.mp3" type = "audio/mp3"/>
+			<source src = "two.wav" type = "audio/wav"/>
+			<source src = "three.ogg" type = "audio/ogg" />
+			-->
+		<!--	<audio controls height = "100" width = "100">
+			<source src = "one.mp3" type = "audio/mp3"/>
+			<source src = "two.wav" type = "audio/wav"/>
+			<source src = "three.ogg" type = "audio/ogg" />
+			</audio>
+			
+			<button id = "b1">start</button>
+			<button id = "b2">pause</button>
+			<button id = "b3">start from the beginning</button>-->
+			
+			<video controls>
+				<source src = "audi_video.mp4" />
+				your browser is old
+			</video>
+			<progress min = 0 max = 100 value = 0>
+			
+			
+			</progress>
+			
+			
+		
+		
+		</audio>
+	
+
+	</body>
+</html>

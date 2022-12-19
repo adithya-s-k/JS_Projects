@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<button id = "B1">loaddata - text</button>
+		<button id = "B2">loaddata - xml</button>
+		<button id = "B3">loaddata - json</button>
+		<button id = "B4">loaddata - video</button>
+		<h1></h1>
+		
+		<script>
+			buttonobj= document.getElementById("B1")
+			h1obj = document.querySelector("h1")
+			buttonobj.onclick = function()
+			{
+				var xhr = new XMLHttpRequest()
+				xhr.open("get","/files/sample.txt") // true - asynchronous
+				xhr.onreadystatechange = showdata1
+				xhr.responseType = "text"
+				//alert("request in progress")
+				xhr.send()
+			}
+			buttonobj2= document.getElementById("B2")
+			buttonobj2.onclick = function()
+			{
+				var xhr = new XMLHttpRequest()
+				xhr.open("get","/files/sample.xml") // true - asynchronous
+				xhr.onreadystatechange = showdata2
+				//xhr.responseType = "text"
+				xhr.responseType = "text"
+				//alert("request in progress")
+				xhr.send()
+			}
+			buttonobj3= document.getElementById("B3")
+			buttonobj3.onclick = function()
+			{
+				var xhr = new XMLHttpRequest()
+				xhr.open("get","/files/sample.json") // true - asynchronous
+				xhr.onreadystatechange = showdata3
+			
+				xhr.responseType = "text"
+				
+				xhr.send()
+			}
+			function showdata1()
+			{	
+				if(this.readyState == 4 && this.status == 200)
+				{
+					h1obj.innerHTML = this.responseText
+				}
+				
+			}
+			function showdata2()
+			{	
+				if(this.readyState == 4 && this.status == 200)
+				{
+					h1obj.innerHTML = this.responseText
+				}
+				
+			}
+			
+			function showdata3()
+			{
+				if(this.readyState == 4 && this.status == 200)
+				{
+					//console.log(typeof this.response)
+					s = JSON.parse(this.response)
+					//console.log(typeof s)
+					h1obj.innerHTML = s.name+" "+s["id"]
+					
+					//s.company = "pes"
+					//console.log(JSON.stringify(s))
+				}
+				
+			}
+			b4obj = document.getElementById("B4")
+			b4obj.onclick = function()
+			{
+				var xhr = new XMLHttpRequest()
+				xhr.open("get","/files/audio_video.mp4") // true - asynchronous
+				xhr.onreadystatechange = showdata4
+				
+				xhr.responseType = "blob"
+				
+				xhr.send()  /// null by default
+			}
+			
+			function showdata4()
+			{
+				console.log(this.readyState)
+			if(this.readyState == 4 && this.status == 200)
+				{
+					v1 = document.createElement("video")
+					v1.src = URL.createObjectURL(this.response)
+					v1.controls = true
+					document.body.appendChild(v1)
+				}
+			}
+		
+		</script>
+	</body>
+</html>
+
+<!--
+
+details = "<bookstore>"+
+				"<book>" +
+					"<title>Everyday Italian</title>" +
+					"<author>Giada De Laurentiis</author>" +
+					"<year>2005</year>" +
+				"</book>"+
+			"</bookstore>"
+			-->
